@@ -63,8 +63,8 @@ public struct CalendarAnnotation: View {
         }
         days.append(interval.upperBound)
 
-        guard var previous: Date  = days.first else { return [] }
         var first: Date = interval.lowerBound
+        var previous: Date = interval.lowerBound
         
         var intervals: [ClosedRange<Date>] = days.reduce(into: []) { partialResult, date in
             let isFirstWeekDay = calendar.date(date, matchesComponents: .init(weekday: calendar.firstWeekday))
@@ -111,7 +111,7 @@ struct Previews_CalendarView_Previews: PreviewProvider {
         .annotate {
             let calendar = Calendar.current
             CalendarAnnotation("Some Range",
-                                    interval: calendar.date(byAdding: .day, value: -16, to: .now)!...calendar.date(byAdding: .day, value: -13, to: .now)!)
+                                    interval: calendar.date(byAdding: .day, value: -14, to: .now)!...calendar.date(byAdding: .day, value: -13, to: .now)!)
                 .foregroundColor(Color.accentColor.opacity(0.1))
             
             CalendarAnnotation("Single Day Range", interval: Date.now...Date.now)
