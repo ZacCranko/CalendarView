@@ -13,7 +13,7 @@ public struct CalendarView<DateView: View, Annotation: View>: View {
     @ViewBuilder private let content: (Date) -> DateView
     @ViewBuilder private var annotation: () -> Annotation
 
-    init(interval: Range<Date>, spacing: CGFloat = 20, @ViewBuilder content: @escaping (Date) -> DateView) where Annotation == EmptyView {
+    public init(interval: Range<Date>, spacing: CGFloat = 20, @ViewBuilder content: @escaping (Date) -> DateView) where Annotation == EmptyView {
         self.spacing = spacing
         self.interval = interval
         self.content = content
