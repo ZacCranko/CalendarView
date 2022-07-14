@@ -19,13 +19,13 @@ public struct CalendarAnnotation: View {
     private let spacing: CGFloat
     @EnvironmentObject private var proxy: CalendarProxy
     
-    init(_ title: String? = nil, interval: ClosedRange<Date>, spacing: CGFloat = 5) {
+    public init(_ title: String? = nil, interval: ClosedRange<Date>, spacing: CGFloat = 5) {
         self.title = title
         self.calledInterval = interval
         self.spacing = spacing
     }
     
-    init(_ title: String? = nil, date: Date, spacing: CGFloat = 5) {
+    public init(_ title: String? = nil, date: Date, spacing: CGFloat = 5) {
         self.title = title
         self.calledInterval = date...date
         self.spacing = spacing
